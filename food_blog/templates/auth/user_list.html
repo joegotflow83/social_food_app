@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Active Userss{% endblock title %}
+
+{% block content %}
+<div class="container">
+  <h3>Check out all the active users</h3>
+  <br>
+  {% for user in object_list %}
+    <h4>{{ user.username }}</h4>
+    <em>{{ user.userprofile.clan }}</em>
+    <br><br>
+  {% endfor %}
+</div>
+{% endblock %}

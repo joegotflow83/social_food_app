@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load bootstrap_tags %}
+{% block title %}Create Post{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h4>Create a post against the vegetables</h4>
+  <form method="post" action="{% url 'create_post' %}">
+    {% csrf_token %}
+    {{ form | as_bootstrap }}
+    <input type="submit" value="Create Post!" class="btn btn-danger">
+</div>
+{% endblock %}

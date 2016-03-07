@@ -1,0 +1,24 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <title>{% block title %}{% endblock title %}</title>
+    <!-- import -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  </head>
+  <body>
+    <ul class="nav nav-tabs">
+      {% if user.is_authenticated %}
+      <li><a href="#"></a></li>
+      <li><a href="{% url 'blog' %}">Blog</a></li>
+        <li><a href="{% url 'create_post' %}">Create Post</a></li>
+        <li><a href="{% url 'user_list' %}">Active Users</a></li>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+      {% else %}
+        <li><a href="{% url 'login' %}">Login</a></li>
+        <li><a href="{% url 'signup' %}">Sign Up</a></li>
+      {% endif %}
+    </ul>
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

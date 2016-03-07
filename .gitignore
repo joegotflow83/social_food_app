@@ -1,0 +1,3 @@
+food_env/
+*.pyc
+food_blog/db.sqlite3
