@@ -1,3 +1,4 @@
 food_env/
 *.pyc
 food_blog/db.sqlite3
+food_blog/food_blog/password.py
