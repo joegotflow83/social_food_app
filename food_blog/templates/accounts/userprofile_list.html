@@ -1,11 +1,15 @@
 {% extends 'base.html' %}
 
+{% block title %}Friends Posts{% endblock title %}
+
 {% block content %}
 <div class="container">
-  <h3>Here is a current list of all the people you are following</h3>
-  {% for friend in object_list %}
-  <p><strong>Username: </strong>{{ friend.friends }}</p>
-  <br><br>
+  <h3>User</h3>
+  {% for post in object_list %}
+    <h3>{{ user.username }}</h3>
+    <h5>{{ post.user.title }}</h5>
+    <p>{{ post.user.body }}</p>
+    <em>{{ post.user.created }}</em>
   {% endfor %}
 </div>
 {% endblock %}

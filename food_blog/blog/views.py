@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import View, ListView
+from django.views.generic import View, ListView, DetailView
 from django.views.generic.edit import CreateView
 from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
@@ -44,15 +44,24 @@ class AddFriend(View):
         new_friend = User.objects.get(pk=pk)
         new_friend_name = Friend(username=new_friend.username)
         user_profile = self.request.user.userprofile
-        new_friend.save()
         new_friend_name.save()
         user_profile.friends.add(new_friend_name)
         user_profile.save()
-        print(user_profile.friends)
         return render(request, 'blog/add_friend.html')
 
 
-class FriendsList(ListView):
+class FriendsList(View):
     """Display all users the current user is following"""
-    model = UserProfile
+    def get(self, request):
+        user = User.objects.get(pk=request.user.id)
+        all_friends = user.userprofile.friends.all()
+        return render(request, 'accounts/friends_list.html', {'friends': all_friends})
 
+
+class FriendDetail(ListView):
+    """View a friends posts"""
+    model = User
+    template_name = 'accounts/userprofile_list.html'
+
+    def get_queryset(self):
+        return self.model.objects.filter(pk=self.kwargs['pk'])

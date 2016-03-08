@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^users/$', views.UserList.as_view(), name='user_list'),
     url(r'^add_friend/(?P<pk>\d+)/$',  views.AddFriend.as_view(), name='add_friend'),
     url(r'^friends_list/$', views.FriendsList.as_view(), name='friends_list'),
+    url(r'^friends_posts/(?P<pk>\d+)/$', views.FriendDetail.as_view(), name='friends_detail'),
 ]
