@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Error{% endblock title %}
+
+{% block content %}
+<div class="container">
+  <h3>You have already added him as a friend!</h3>
+  <a href="{% url 'blog' %}" class="btn btn-info">Go Home</a>
+</div>
+{% endblock %}

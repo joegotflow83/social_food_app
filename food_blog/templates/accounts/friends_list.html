@@ -4,8 +4,8 @@
 <div class="container">
   <h3>Here is a current list of all the people you are following</h3>
   {% for friend in friends %}
-  <p><strong>Username: </strong><a href="{% url 'friends_detail' friend.id %}">{{ friend.username }}</a></p>
-  <br><br>
+      <p><strong>Username: </strong><a href="{% url 'friends_detail' friend.id %}">{{ friend.username }} {{ friend.id }}</a></p>
+      <br><br>
   {% endfor %}
 </div>
 {% endblock %}

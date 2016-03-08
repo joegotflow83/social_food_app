@@ -10,4 +10,7 @@ urlpatterns = [
     url(r'^add_friend/(?P<pk>\d+)/$',  views.AddFriend.as_view(), name='add_friend'),
     url(r'^friends_list/$', views.FriendsList.as_view(), name='friends_list'),
     url(r'^friends_posts/(?P<pk>\d+)/$', views.FriendDetail.as_view(), name='friends_detail'),
+    url(r'^forum/$', views.Forum.as_view(), name='forum'),
+    url(r'^forum_post/$', views.ForumPost.as_view(), name='forum_post'),
+    url(r'^$', views.Index.as_view(), name='index'),
 ]

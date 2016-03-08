@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Clash Of Melons{% endblock title %}
+
+{% block content %}
+<div class="jumbotron text-center white-text">
+  <h1>Clash Of Melons!</h1>
+  <h3>A Blog Where Fruits and Melons Clash in the Battle of Health Foods</h3>
+  <a href="{% url 'login' %}" class="btn btn-info">Login</a>
+</div>
+<style>
+  .jumbotron {
+    background-image: url(https://pixabay.com/static/uploads/photo/2016/02/24/20/45/tomatoes-1220774_960_720.jpg);
+  }
+
+  .white-text {
+    color: white;
+  }
+</style>
+{% endblock %}

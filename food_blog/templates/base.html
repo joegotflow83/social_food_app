@@ -13,8 +13,11 @@
         <li><a href="{% url 'create_post' %}">Create Post</a></li>
         <li><a href="{% url 'user_list' %}">Active Users</a></li>
         <li><a href="{% url 'friends_list' %}">Friends List</a></li>
+        <li><a href={% url 'forum' %}>Forum</a></li>
+        <li><a href={% url 'forum_post' %}>Create Forum Post</a></li>
         <li><a href="{% url 'logout' %}">Logout</a></li>
       {% else %}
+        <li><a href="{% url 'index' %}">Index</a></li>
         <li><a href="{% url 'login' %}">Login</a></li>
         <li><a href="{% url 'signup' %}">Sign Up</a></li>
       {% endif %}

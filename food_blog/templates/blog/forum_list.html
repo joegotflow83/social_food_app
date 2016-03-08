@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock title %}
+
+{% block content %}
+<div class="container">
+  <h3>See what everyone is saying in the war on healthy foods</h3>
+  {% for post in object_list %}
+   <h4>Username: {{ post.person.username }}</h4>
+   <h5><strong>Title:</strong> {{ post.title }}</h5>
+   <strong>Body:</strong> {{ post.body | linebreaks }}
+   <em>{{ post.created_at }}</em>
+   <br><br>
+   {% endfor %}
+</div>
+{% endblock %}

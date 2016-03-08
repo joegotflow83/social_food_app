@@ -24,3 +24,14 @@ class Post(models.Model):
 
         ordering = ['-created']
 
+
+class Forum(models.Model):
+
+    person = models.ForeignKey(User)
+    title = models.CharField(max_length=255)
+    body = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+
+        ordering = ['-created_at']

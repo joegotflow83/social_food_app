@@ -4,12 +4,12 @@
 
 {% block content %}
 <div class="container">
-  <h3>User</h3>
-  {% for post in object_list %}
-    <h3>{{ user.username }}</h3>
-    <h5>{{ post.user.title }}</h5>
-    <p>{{ post.user.body }}</p>
-    <em>{{ post.user.created }}</em>
+  <h3>Username: {{ friend.username }}</h3>
+  {% for post in friends_posts %}
+  <h4>Title: {{ post.title }}</h4>
+  <p>Body: {{ post.body }}</p>
+  <em>{{ post.created }}</em>
+  <br><br>
   {% endfor %}
 </div>
 {% endblock %}
