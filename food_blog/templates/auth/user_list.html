@@ -7,8 +7,8 @@
   <h3>Check out all the active users</h3>
   <br>
   {% for user in object_list %}
-    <h4>{{ user.username }}</h4>
-    <em>{{ user.userprofile.clan }}</em>
+    <h4>{{ user.username }}</h4> {{ user.userprofile.clan }}
+    <a href="{% url 'add_friend' user.id %}" class="btn btn-success">Follow!</a>
     <br><br>
   {% endfor %}
 </div>

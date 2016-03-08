@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.views.generic.edit import CreateView
 from django.core.urlresolvers import reverse
@@ -16,6 +15,9 @@ class Signup(CreateView):
         """Validate the form and create the user profile"""
         user_object = form.save()
         UserProfile.objects.create(user=user_object,
+                                   first_name=form.cleaned_data['first_name'],
+                                   last_name=form.cleaned_data['first_name'],
+                                   email=form.cleaned_data['email'],
                                    clan=form.cleaned_data['clan'],
                                    texture=form.cleaned_data['texture'])
         return super().form_valid(form)

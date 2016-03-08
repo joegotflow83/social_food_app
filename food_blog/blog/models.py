@@ -2,22 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class Friend(models.Model):
-
-    username = models.CharField(max_length=30)
-    first_name = models.CharField(max_length=32)
-    last_name = models.CharField(max_length=32)
-
-    @property
-    def full_name(self):
-        return self.first_name + " " + self.last_name
-
-
-class FriendList(models.Model):
-
-    friends = models.ManyToManyField(Friend)
-
-
 class Tag(models.Model):
 
     name = models.CharField(max_length=32)

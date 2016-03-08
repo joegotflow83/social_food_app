@@ -5,6 +5,7 @@
 {% block content %}
 <div class="container">
   <h3>Welcome {{ request.user }}! A lot has happened since your last arrival</h3>
+  <em>Here is what you have last posted</em>
   <br><br>
   {% for post in object_list %}
   <h4>{{ post.title }}</h4>
